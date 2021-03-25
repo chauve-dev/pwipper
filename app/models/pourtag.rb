@@ -1,0 +1,3 @@
+class Pourtag < ApplicationRecord
+
+end
