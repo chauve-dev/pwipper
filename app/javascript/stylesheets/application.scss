@@ -4,3 +4,17 @@
 
 /* Add any custom CSS here */
 @import "tailwindcss/utilities";
+
+@layer components {
+  .login-wrapper{
+    @apply flex-col items-center justify-center p-5 transform transition duration-500 hover:scale-125
+  }
+
+  .login-wrapper > img:first-of-type {
+    @apply rounded-full h-24 w-24
+  }
+
+  .login-wrapper > p:first-of-type {
+    @apply p-2 text-center
+  }
+}

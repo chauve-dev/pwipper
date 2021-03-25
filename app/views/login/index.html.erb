@@ -1,6 +1,8 @@
-<div>
-  <div class="flex-col items-center justify-center">
-    <img class="rounded-full h-24 w-24" src="https://picsum.photos/400">
-    <p class="p-2 text-center">Joey</p>
-  </div>
+<div class="inline-flex">
+  <% @Users.each do |utilisateur| %>
+    <div class="login-wrapper">
+      <img src="https://picsum.photos/400">
+      <p><%= utilisateur.nickname %></p>
+    </div>
+  <% end %>
 </div>
