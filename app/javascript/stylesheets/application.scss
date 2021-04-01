@@ -11,10 +11,26 @@
   }
 
   .login-wrapper > img:first-of-type {
-    @apply rounded-full h-24 w-24
+    @apply rounded-full h-24 w-24 object-cover
   }
 
   .login-wrapper > p:first-of-type {
     @apply p-2 text-center
   }
+
+  .form {
+    @apply inline-grid
+  }
+
+  .form > div > input {
+    @apply bg-black rounded-full p-4
+  }
+
+  .form > div {
+    @apply grid m-2
+  }
+
+  .form > input[type=submit] {
+  @apply text-black rounded-full bg-black text-white p-2
+}
 }
