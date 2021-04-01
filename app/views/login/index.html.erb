@@ -1,8 +1,10 @@
 <div class="inline-flex">
   <% @Users.each do |utilisateur| %>
+    <a href="<%= connexion_path(utilisateur.id) %>">
     <div class="login-wrapper">
       <img src="https://picsum.photos/400">
       <p><%= utilisateur.nickname %></p>
     </div>
+    </a>
   <% end %>
 </div>
