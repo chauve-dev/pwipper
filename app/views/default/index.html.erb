@@ -1,4 +1,10 @@
-<h1>PWEPPER</h1>
-<div>
-  <p>Find me in app/views/default/index.html.erb</p>
-</div>
+<body>
+  <div>
+    <h1>PWIPPER</h1>
+  </div>
+  <div>
+    <% @users.each do |user| %>
+      <p><%= user.nickname %> - <%= user.bio %></p>
+    <% end %>
+  </div>
+</body>
