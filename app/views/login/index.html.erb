@@ -2,7 +2,11 @@
   <% @Users.each do |utilisateur| %>
     <a href="<%= connexion_path(utilisateur.id) %>">
     <div class="login-wrapper">
-      <img src="https://picsum.photos/400">
+        <% if utilisateur.avatar.attached? %>
+        <img src="<%= url_for(utilisateur.avatar) %>>">
+        <% else %>
+        <img src="https://picsum.photos/400">
+        <% end %>
       <p><%= utilisateur.nickname %></p>
     </div>
     </a>
