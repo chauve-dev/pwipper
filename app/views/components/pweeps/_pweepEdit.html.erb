@@ -1,0 +1,15 @@
+<form class="w-3/4 p-2">
+    <div>
+        <textarea class="resize-none rounded-xl w-full bg-pweep-purple p-3" placeholder="Composer un nouveau Pweep"></textarea>
+    </div>
+    <div class="flex justify-end pt-2">
+        <input type="submit" class="w-auto bg-pweep-yellow text-white p-3 rounded-3xl transition duration-300 hover:bg-pweep-blue cursor-pointer" value="Envoyer le pweep">
+    </div>
+</form>
+
+<%= form_for @pweep do |f|%>
+    <div>
+        <%= f.textarea :content %>
+    </div>
+    <%= f.submit %>
+<%end%>

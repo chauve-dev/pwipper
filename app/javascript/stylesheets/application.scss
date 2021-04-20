@@ -5,7 +5,23 @@
 /* Add any custom CSS here */
 @import "tailwindcss/utilities";
 
+
 @layer components {
+  ::-webkit-scrollbar {
+    width: 20px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-pweep-yellow;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+  }
+
   .pweeper-body {
     @apply w-10/12 h-screen p-12;
   }
@@ -15,7 +31,7 @@
   }
 
   .pweep-wrapper {
-    @apply flex bg-pweep-purple text-white rounded w-3/4 p-2;
+    @apply flex bg-pweep-purple text-white rounded w-3/4 p-2 mb-4 mt-4;
   }
 
   .pweep-wrapper > img:first-of-type {
