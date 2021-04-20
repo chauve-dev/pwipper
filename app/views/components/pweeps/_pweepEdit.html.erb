@@ -1,15 +1,8 @@
-<form class="w-3/4 p-2">
+<%= form_with url: "/newpweep", html: {class: "w-3/4 p-2"} do |f|%>
     <div>
-        <textarea class="resize-none rounded-xl w-full bg-pweep-purple p-3" placeholder="Composer un nouveau Pweep"></textarea>
+        <%= f.text_area :content, class: "resize-none rounded-xl w-full bg-pweep-purple p-3", placeholder: "Composer un nouveau Pweep" %>
     </div>
-    <div class="flex justify-end pt-2">
-        <input type="submit" class="w-auto bg-pweep-yellow text-white p-3 rounded-3xl transition duration-300 hover:bg-pweep-blue cursor-pointer" value="Envoyer le pweep">
-    </div>
-</form>
-
-<%= form_for @pweep do |f|%>
-    <div>
-        <%= f.textarea :content %>
-    </div>
-    <%= f.submit %>
+  <div class="flex justify-end pt-2">
+    <%= f.submit "Envoyer le pweep", class: "w-auto bg-pweep-yellow text-white p-3 rounded-3xl transition duration-300 hover:bg-pweep-blue cursor-pointer" %>
+  </div>
 <%end%>

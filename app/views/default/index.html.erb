@@ -5,7 +5,9 @@
   </div>
   <div><hr class="m-4 w-3/4 border-pweep-purple"></div>
   <div class="overflow-x-auto h-5/6">
-    <%= render 'components/pweeps/pweep', content: "Test content", user: @user %>
+    <% @pweeps.reverse_each do |pweep| %>
+    <%= render 'components/pweeps/pweep', content: pweep.body, user: @users.find(pweep.utilisateur_id) %>
+      <% end %>
   </div>
 </div>
 <%= render 'components/pweeps/listPourtags', pourtags: @pourtags %>

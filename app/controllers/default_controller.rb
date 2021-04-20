@@ -2,6 +2,7 @@ class DefaultController < ApplicationController
   def index
     if session[:current_user_id]
       @pweep = Pweep.new
+      @pweeps = Pweep.all
       @user = Utilisateur.find(session[:current_user_id])
       @users = Utilisateur.all
       @pourtags = Pourtag.all
@@ -10,8 +11,9 @@ class DefaultController < ApplicationController
     end
   end
 
-  def create
-    @pweep = Pweep.create(params.require(:pweep).permit(:body), session[:current_user_id])
+  def newpweep
+    puts params
+    Pweep.create(body: params.require(:content), utilisateur_id: session[:current_user_id])
     redirect_to '/'
   end
 end
