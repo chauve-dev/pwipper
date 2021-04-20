@@ -7,7 +7,16 @@ module.exports = {
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        pweep: {
+          purple: "#201C35",
+          background: "#100E1B",
+          yellow: "#FFA630",
+          blue: "#4DFFF3"
+        }
+      }
+    },
   },
   variants: {
     extend: {},

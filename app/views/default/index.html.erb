@@ -1,3 +1,11 @@
-<div>
-  <p>Bonjour <%= @user.nickname %></p>
+<%= render 'components/pweeps/listUsers', users: @users %>
+<div class="pweeper-body">
+  <div>
+    composant d'edition
+  </div>
+  <div>
+    <%= render 'components/pweeps/pweep', content: "Test content", user: @user %>
+  </div>
 </div>
+
+<div class="w-max"></div>

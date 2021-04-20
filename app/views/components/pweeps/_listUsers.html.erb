@@ -1,0 +1,12 @@
+<div class="w-max">
+<% users.each do |utilisateur|%>
+    <div class="flex item-center">
+        <img class="w-11 rounded-full" src="<%= url_for(utilisateur.avatar) %>" />
+        <div class="flex justify-between w-28 items-center pl-4">
+            <p><%= utilisateur.nickname %></p>
+            <span><i class="fas fa-plus-circle transform text-xl transition duration-500 hover:scale-125 hover:text-pweep-yellow"></i></span>
+        </div>
+    </div>
+    <hr class="m-4 border-pweep-purple"/>
+<% end %>
+</div>

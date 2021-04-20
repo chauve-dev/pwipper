@@ -6,6 +6,38 @@
 @import "tailwindcss/utilities";
 
 @layer components {
+  .pweeper-body {
+    @apply w-10/12 h-screen p-12;
+  }
+
+  .pweeper-body > div {
+    @apply w-full flex flex-col items-center justify-center
+  }
+
+  .pweep-wrapper {
+    @apply flex bg-pweep-purple text-white rounded w-3/4 p-2;
+  }
+
+  .pweep-wrapper > img:first-of-type {
+    @apply rounded-full h-12 w-12 object-cover m-2;
+  }
+
+  .pweep-wrapper > div:first-of-type {
+    @apply w-full;
+  }
+
+  .pweep-wrapper p:nth-of-type(1) {
+    @apply text-pweep-yellow;
+  }
+
+  .pweep-wrapper p:nth-of-type(2) {
+    @apply m-2;
+  }
+
+  .pweep-wrapper > div > div {
+    @apply flex justify-between items-center m-3 w-2/3 text-pweep-yellow;
+  }
+
   .login-wrapper{
     @apply flex-col items-center justify-center p-5 transform transition duration-500 hover:scale-125
   }
