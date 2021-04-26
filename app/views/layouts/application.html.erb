@@ -9,10 +9,20 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-
+    <script src="https://kit.fontawesome.com/4947280245.js" crossorigin="anonymous"></script>
   </head>
 
-  <body>
+  <body class="bg-pweep-background h-screen v-screen text-white overflow-hidden">
+  <div class="bg-pweep-purple p-4 flex items-center justify-between h-bandeau">
+    <div><h1 class="text-4xl text-pweep-yellow">Pwipper</h1></div>
+    <div>
+      <a href="<%= url_for("/") %>" class="pl-4 pr-4 pt-2 pb-2 m-4 bg-pweep-background rounded-lg cursor-pointer transform transition duration-300 hover:bg-pweep-blue hover:text-black">Home</a>
+      <a href="<%= url_for("/utilisateurs/new") %>" class="pl-4 pr-4 pt-2 pb-2 m-4 bg-pweep-background rounded-lg cursor-pointer transform transition duration-300 hover:bg-pweep-blue hover:text-black">Register</a>
+      <a href="<%= url_for("/login") %>" class="pl-4 pr-4 pt-2 pb-2 m-4 bg-pweep-background rounded-lg cursor-pointer transform transition duration-300 hover:bg-pweep-blue hover:text-black">Login</a>
+    </div>
+  </div>
+  <div class="overflow-x-auto h-corp">
     <%= yield %>
+  </div>
   </body>
 </html>

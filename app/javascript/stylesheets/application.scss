@@ -4,3 +4,81 @@
 
 /* Add any custom CSS here */
 @import "tailwindcss/utilities";
+
+
+@layer components {
+  ::-webkit-scrollbar {
+    width: 20px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-pweep-yellow;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+  }
+
+  .pweeper-body {
+    @apply w-10/12 h-screen;
+  }
+
+  .pweeper-body > div {
+    @apply w-full flex flex-col items-center
+  }
+
+  .pweep-wrapper {
+    @apply flex bg-pweep-purple text-white rounded w-3/4 p-2 mb-4 mt-4;
+  }
+
+  .pweep-wrapper > img:first-of-type {
+    @apply rounded-full h-12 w-12 object-cover m-2;
+  }
+
+  .pweep-wrapper > div:first-of-type {
+    @apply w-full;
+  }
+
+  .pweep-wrapper p:nth-of-type(1) {
+    @apply text-pweep-yellow;
+  }
+
+  .pweep-wrapper p:nth-of-type(2) {
+    @apply m-2;
+  }
+
+  .pweep-wrapper > div > div {
+    @apply flex justify-between items-center m-3 w-2/3 text-pweep-yellow;
+  }
+
+  .login-wrapper{
+    @apply flex-col items-center justify-center p-5 transform transition duration-500 hover:scale-125
+  }
+
+  .login-wrapper > img:first-of-type {
+    @apply rounded-full h-24 w-24 object-cover
+  }
+
+  .login-wrapper > p:first-of-type {
+    @apply p-2 text-center
+  }
+
+  .form {
+    @apply inline-grid
+  }
+
+  .form > div > input {
+    @apply bg-black rounded-full p-4
+  }
+
+  .form > div {
+    @apply grid m-2
+  }
+
+  .form > input[type=submit] {
+  @apply text-black rounded-full bg-black text-white p-2
+}
+}

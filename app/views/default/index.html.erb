@@ -1,0 +1,19 @@
+<div class="text-gray-50 flex justify-center">
+  <%= render 'components/pweeps/listUsers', users: @users %>
+  <div class="pweeper-body">
+    <div class="h-auto p-4">
+      <%= render 'components/pweeps/bandeauUtil', user: @user %>
+    </div>
+    <div class="h-auto">
+      <%= render 'components/pweeps/pweepEdit' %>
+      <hr class="m-4 w-3/4 border-pweep-purple">
+    </div>
+    <div>
+      <% @pweeps.reverse_each do |pweep| %>
+        <%= render 'components/pweeps/pweep', content: pweep.body, user: @users.find(pweep.utilisateur_id) %>
+      <% end %>
+    </div>
+  </div>
+  <%= render 'components/pweeps/listPourtags', pourtags: @pourtags %>
+  <div class="w-max"></div>
+</div>
