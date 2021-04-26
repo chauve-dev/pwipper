@@ -8,6 +8,10 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      height: {
+        'bandeau': '8%',
+        'corp': '92%'
+      },
       colors: {
         pweep: {
           purple: "#201C35",
