@@ -1,5 +1,9 @@
 <div class="pweep-wrapper">
-  <img src="<%= url_for(user.avatar) %>" />
+  <% if user.avatar.attached? %>
+    <img src="<%= url_for(user.avatar) %>" />
+  <% else %>
+    <img src="https://picsum.photos/400">
+  <% end %>
   <div>
     <p><%= user.nickname %></p>
     <p><%= content %></p>

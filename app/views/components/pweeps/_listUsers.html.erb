@@ -3,7 +3,11 @@
 <hr class="m-4 border-pweep-purple"/>
 <% @users.each do |utilisateur|%>
     <div class="flex item-center">
+      <% if utilisateur.avatar.attached? %>
         <img class="w-11 rounded-full" src="<%= url_for(utilisateur.avatar) %>" />
+      <% else %>
+        <img src="https://picsum.photos/400">
+      <% end %>
         <div class="flex justify-between w-28 items-center pl-4">
             <p><%= utilisateur.nickname %></p>
             <span><i class="fas fa-plus-circle transform text-xl transition duration-500 hover:scale-125 hover:text-pweep-yellow"></i></span>
