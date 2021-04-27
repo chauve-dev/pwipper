@@ -2,7 +2,7 @@
   <img src="<%= url_for(user.avatar) %>" />
   <div>
     <p><%= user.nickname %></p>
-    <p><%= content %></p>
+    <p><%= sanitize content %></p>
     <div>
       <span><i class="far fa-comment"></i></span>
       <span><i class="fas fa-retweet"></i></span>
