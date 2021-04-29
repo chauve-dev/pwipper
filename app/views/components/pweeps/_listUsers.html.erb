@@ -9,8 +9,14 @@
         <img src="https://picsum.photos/50">
       <% end %>
         <div class="flex justify-between w-28 items-center pl-4">
-            <p><%= utilisateur.nickname %></p>
-            <span><i class="fas fa-plus-circle transform text-xl transition duration-500 hover:scale-125 hover:text-pweep-yellow"></i></span>
+          <p><%= utilisateur.nickname %></p>
+          <%= link_to follow_path(:user_name => utilisateur.id) do %>
+            <% if @icon %>
+              <span><i class="fas fa-plus-circle transform text-xl transition duration-500 hover:scale-125 hover:text-pweep-yellow"></i></span>
+            <% else %>
+              <span><i class="fas fa-plus-circle transform text-xl transition duration-500 hover:scale-125 hover:text-pweep-yellow"></i></span>
+            <% end %>
+          <% end %>
         </div>
     </div>
     <hr class="m-4 border-pweep-purple"/>

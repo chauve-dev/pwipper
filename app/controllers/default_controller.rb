@@ -2,11 +2,11 @@ class DefaultController < ApplicationController
   def index
     if session[:current_user_id]
       @pweep = Pweep.new
-      if request.GET['pourtag'].nil?
-        @pweeps = Pweep.all
+      @pweeps = if request.GET['pourtag'].nil?
+        Pweep.all
       else
-        @pweeps = Pweep.joins(:pourtag).where(pourtag: {label: request.GET['pourtag']})
-      end
+        Pweep.joins(:pourtag).where(pourtag: {label: request.GET['pourtag']})
+                end
 
       @user = Utilisateur.find(session[:current_user_id])
       @users = Utilisateur.all
