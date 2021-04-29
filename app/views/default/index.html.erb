@@ -10,8 +10,9 @@
     </div>
     <div>
       <% @pweeps.reverse_each do |pweep| %>
-
-        <%= render 'components/pweeps/pweep', content: pweep.body, user: @users.find(pweep.utilisateur_id) %>
+        <% if pweep.utilisateur_id == @user.id or @follow_icon.include?(pweep.utilisateur_id)  %>
+          <%= render 'components/pweeps/pweep', content: pweep.body, user: @users.find(pweep.utilisateur_id) %>
+        <% end %>
       <% end %>
     </div>
   </div>
