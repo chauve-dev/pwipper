@@ -2,23 +2,27 @@
 <span class="text-pweep-yellow text-2xl leading-5">Liste des utilisateurs</span>
 <hr class="m-4 border-pweep-purple"/>
 <% @users.each do |utilisateur|%>
-    <div class="flex item-center">
-      <% if utilisateur.avatar.attached? %>
-        <img class="w-11 rounded-full" src="<%= url_for(utilisateur.avatar) %>" />
-      <% else %>
-        <img src="https://picsum.photos/50">
-      <% end %>
-        <div class="flex justify-between w-28 items-center pl-4">
-          <p><%= utilisateur.nickname %></p>
-          <%= link_to follow_path(:user_id => utilisateur.id) do %>
+    <% unless utilisateur.id == @user.id %>
+      <div class="flex item-center">
+        <% if utilisateur.avatar.attached? %>
+          <img class="w-11 rounded-full" src="<%= url_for(utilisateur.avatar) %>" />
+        <% else %>
+          <img src="https://picsum.photos/50">
+        <% end %>
+          <div class="flex justify-between w-28 items-center pl-4">
+            <p><%= utilisateur.nickname %></p>
             <% if @follow_icon.include?(utilisateur.id)  %>
-              <span><i class="fas fa-minus-circle transform text-xl transition duration-500 hover:scale-125 hover:text-pweep-yellow"></i></span>
+              <%= link_to unfollow_path(:user_id => utilisateur.id) do %>
+                <span><i class="fas fa-minus-circle transform text-xl transition duration-500 hover:scale-125 hover:text-pweep-yellow"></i></span>
+              <% end %>
             <% else %>
-              <span><i class="fas fa-plus-circle transform text-xl transition duration-500 hover:scale-125 hover:text-pweep-yellow"></i></span>
+              <%= link_to follow_path(:user_id => utilisateur.id) do %>
+                <span><i class="fas fa-plus-circle transform text-xl transition duration-500 hover:scale-125 hover:text-pweep-yellow"></i></span>
+              <% end %>
             <% end %>
-          <% end %>
-        </div>
-    </div>
+          </div>
+      </div>
+    <% end %>
     <hr class="m-4 border-pweep-purple"/>
 <% end %>
 </div>

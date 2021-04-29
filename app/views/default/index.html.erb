@@ -10,6 +10,7 @@
     </div>
     <div>
       <% @pweeps.reverse_each do |pweep| %>
+
         <%= render 'components/pweeps/pweep', content: pweep.body, user: @users.find(pweep.utilisateur_id) %>
       <% end %>
     </div>
