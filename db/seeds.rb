@@ -32,4 +32,6 @@ Ut3 = Utilisateur.create(nickname: "Solarius",
                          profil_picture: nil)
 Ut3.avatar.attach(io: File.open('db/img_seed/solarius.jpg'), filename: 'solarius.jpg')
 
-Pt1 = Pweep.create(body: "Mon premier pweep", utilisateur_id: Ut1.id)
+Pweep.create(body: "Mon premier pweep %pweeper !", utilisateur_id: Ut1.id)
+Pweep.create(body: "C'est nul comme site %remboursé", utilisateur_id: Ut2.id)
+Pweep.create(body: "Le notre est mieux %proxima %litopia %linux %laravel %oui", utilisateur_id: Ut3.id)
