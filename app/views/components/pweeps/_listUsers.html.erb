@@ -10,9 +10,9 @@
       <% end %>
         <div class="flex justify-between w-28 items-center pl-4">
           <p><%= utilisateur.nickname %></p>
-          <%= link_to follow_path(:user_name => utilisateur.id) do %>
-            <% if @icon %>
-              <span><i class="fas fa-plus-circle transform text-xl transition duration-500 hover:scale-125 hover:text-pweep-yellow"></i></span>
+          <%= link_to follow_path(:user_id => utilisateur.id) do %>
+            <% if @follow_icon.include?(utilisateur.id)  %>
+              <span><i class="fas fa-minus-circle transform text-xl transition duration-500 hover:scale-125 hover:text-pweep-yellow"></i></span>
             <% else %>
               <span><i class="fas fa-plus-circle transform text-xl transition duration-500 hover:scale-125 hover:text-pweep-yellow"></i></span>
             <% end %>

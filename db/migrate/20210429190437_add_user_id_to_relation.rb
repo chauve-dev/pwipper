@@ -1,5 +1,5 @@
 class AddUserIdToRelation < ActiveRecord::Migration[6.1]
   def change
-    add_column :relations, :user_id, :string
+    add_column :relations, :user_id, :integer
   end
 end

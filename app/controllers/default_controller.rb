@@ -11,6 +11,7 @@ class DefaultController < ApplicationController
       @user = Utilisateur.find(session[:current_user_id])
       @users = Utilisateur.all
       @pourtags = Pourtag.group(:label).order('COUNT(label) DESC').limit(10)
+      @follow_icon = Relation.where(follower_id: session[:current_user_id]).distinct.pluck(:user_id)
     else
       redirect_to '/login'
     end
