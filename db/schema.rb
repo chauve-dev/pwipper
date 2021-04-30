@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_01_071419) do
+ActiveRecord::Schema.define(version: 2021_04_29_190437) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2021_04_01_071419) do
     t.string "label"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "pweep_id"
   end
 
   create_table "pweeps", force: :cascade do |t|
@@ -54,13 +55,19 @@ ActiveRecord::Schema.define(version: 2021_04_01_071419) do
     t.index ["utilisateur_id"], name: "index_pweeps_on_utilisateur_id"
   end
 
+  create_table "relations", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "follower_id"
+    t.integer "utilisateur_id"
+  end
+
   create_table "utilisateurs", force: :cascade do |t|
     t.string "nickname"
     t.string "username"
     t.string "email"
     t.string "password"
     t.string "bio"
-    t.string "profil_picture"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -1,5 +1,9 @@
 <div class="bg-pweep-purple w-full p-10 rounded-lg flex">
-  <img class="w-32 h-32 object-cover rounded-full" src="<%= url_for(user.avatar) %>" />
+  <% if user.avatar.attached? %>
+    <img class="w-32 h-32 object-cover rounded-full" src="<%= url_for(user.avatar) %>" />
+  <% else %>
+    <img src="https://picsum.photos/200">
+  <% end %>
   <div class="pl-24">
     <h3 class="text-4xl text-pweep-yellow"><%= user.nickname %></h3>
     <span class="text-gray-400">@<%= user.username %></span>

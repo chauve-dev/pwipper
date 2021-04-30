@@ -1,8 +1,12 @@
 <div class="pweep-wrapper">
-  <img src="<%= url_for(user.avatar) %>" />
+  <% if user.avatar.attached? %>
+    <img src="<%= url_for(user.avatar) %>" />
+  <% else %>
+    <img src="https://picsum.photos/200">
+  <% end %>
   <div>
     <p><%= user.nickname %></p>
-    <p><%= content %></p>
+    <p><%= sanitize content %></p>
     <div>
       <span><i class="far fa-comment"></i></span>
       <span><i class="fas fa-retweet"></i></span>
