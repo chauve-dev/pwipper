@@ -6,8 +6,7 @@ class PweepTest < ActiveSupport::TestCase
                                username: "baldus_maximus",
                                email: "jeantetjoey.pro@gmail.com",
                                password: "123",
-                               bio: "Chauve un jour chauve toujours",
-                               profile_picture: nil)
+                               bio: "Chauve un jour chauve toujours")
     pweep = Pweep.new(body: "Mon premier pweep", utilisateur_id: Ut1.id)
     assert pweep.valid?
   end
@@ -17,8 +16,7 @@ class PweepTest < ActiveSupport::TestCase
                                  username: "baldus_maximus",
                                  email: "jeantetjoey.pro@gmail.com",
                                  password: "123",
-                                 bio: "Chauve un jour chauve toujours",
-                                 profile_picture: nil)
+                                 bio: "Chauve un jour chauve toujours")
     pweep = Pweep.new(utilisateur_id: Ut1.id)
     assert !pweep.valid?
   end

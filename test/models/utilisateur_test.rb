@@ -51,4 +51,17 @@ class UtilisateurTest < ActiveSupport::TestCase
         assert !Ut1.valid?
    end
 
+  test "User is unique" do
+    Ut1 = Utilisateur.create(nickname: "Chauve",
+                          username: "baldus_maximus",
+                          email: "jeantetjoey.pro@gmail.com",
+                          password: "123",
+                          bio: "Chauve un jour chauve toujours")
+    Ut2 = Utilisateur.new(nickname: "Chauve",
+                          username: "baldus_maximus",
+                          email: "jeantetjoey.pro@gmail.com",
+                          password: "123",
+                          bio: "Chauve un jour chauve toujours")
+    assert !Ut2.valid?
+  end
 end

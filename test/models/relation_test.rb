@@ -13,7 +13,7 @@ class RelationTest < ActiveSupport::TestCase
                              email: "era@gmail.com",
                              password: "123",
                              bio: "Pas contente")
-    follow = Relation.new(user_id: Ut1.id, follower_id: Ut2.id)
+    follow = Relation.new(utilisateur_id: Ut1.id, follower_id: Ut2.id)
     assert follow.valid?
   end
 
@@ -29,8 +29,8 @@ class RelationTest < ActiveSupport::TestCase
                              email: "era@gmail.com",
                              password: "123",
                              bio: "Pas contente")
-    Relation.create(user_id: Ut1.id, follower_id: Ut2.id)
-    follow = Relation.new(user_id: Ut1.id, follower_id: Ut2.id)
+    Relation.create(utilisateur_id: Ut1.id, follower_id: Ut2.id)
+    follow = Relation.new(utilisateur_id: Ut1.id, follower_id: Ut2.id)
     assert !follow.valid?
   end
 
