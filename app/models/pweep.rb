@@ -1,4 +1,5 @@
 class Pweep < ApplicationRecord
+    validates :body, presence: true
   belongs_to :utilisateur
   has_many :pourtag
   before_create :before_create

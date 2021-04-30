@@ -12,24 +12,21 @@ Ut1 = Utilisateur.create(nickname: "Chauve",
                          username: "baldus_maximus",
                          email: "jeantetjoey.pro@gmail.com",
                          password: "123",
-                         bio: "Chauve un jour chauve toujours",
-                         profile_picture: nil)
+                         bio: "Chauve un jour chauve toujours")
 Ut1.avatar.attach(io: File.open('db/img_seed/ppchauve.jpg'), filename: 'ppchauve.jpg')
 
 Ut2 = Utilisateur.create(nickname: "era",
                          username: "era_dication",
                          email: "era@gmail.com",
                          password: "123",
-                         bio: "Pas contente",
-                         profile_picture: nil)
+                         bio: "Pas contente")
 Ut2.avatar.attach(io: File.open('db/img_seed/era.png'), filename: 'era.png')
 
 Ut3 = Utilisateur.create(nickname: "Solarius",
                          username: "gre_forever",
                          email: "solarius@gmail.com",
                          password: "123",
-                         bio: "J'aime les pâtes",
-                         profile_picture: nil)
+                         bio: "J'aime les pâtes")
 Ut3.avatar.attach(io: File.open('db/img_seed/solarius.jpg'), filename: 'solarius.jpg')
 
 Pweep.create(body: "Mon premier pweep %pweeper !", utilisateur_id: Ut1.id)
