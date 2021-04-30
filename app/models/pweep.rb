@@ -1,7 +1,7 @@
 class Pweep < ApplicationRecord
-    validates :body, presence: true
+  validates :body, presence: true
   belongs_to :utilisateur
-  has_many :pourtag
+  has_many :pourtag, :dependent => :destroy
   before_create :before_create
   after_create :after_create
 
@@ -25,6 +25,5 @@ class Pweep < ApplicationRecord
       end
     end
   end
-
 
 end

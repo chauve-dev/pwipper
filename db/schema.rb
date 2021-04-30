@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 2021_04_29_190437) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "follower_id"
-    t.integer "user_id"
+    t.integer "utilisateur_id"
   end
 
   create_table "utilisateurs", force: :cascade do |t|
@@ -68,7 +68,6 @@ ActiveRecord::Schema.define(version: 2021_04_29_190437) do
     t.string "email"
     t.string "password"
     t.string "bio"
-    t.string "profile_picture"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

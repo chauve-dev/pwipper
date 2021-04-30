@@ -32,3 +32,4 @@ Ut3.avatar.attach(io: File.open('db/img_seed/solarius.jpg'), filename: 'solarius
 Pweep.create(body: "Mon premier pweep %pweeper !", utilisateur_id: Ut1.id)
 Pweep.create(body: "C'est nul comme site %remboursé", utilisateur_id: Ut2.id)
 Pweep.create(body: "Le notre est mieux %proxima %litopia %linux %laravel %oui", utilisateur_id: Ut3.id)
+Ut3.destroy
